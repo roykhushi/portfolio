@@ -2,19 +2,11 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import {
-  IconBoxAlignRightFilled,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
+import { IconFileBroken } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { WordRotate } from "@/components/magicui/word-rotate";
-import { ArrowRightCircleIcon, BracesIcon } from "lucide-react";
-import { div } from "motion/react-client";
+import { BracesIcon } from "lucide-react";
 import Link from "next/link";
-import { AuroraBackground } from "./ui/aurora-background";
 import { SparklesText } from "./magicui/sparkles-text";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 
@@ -156,85 +148,80 @@ const SkeletonThree = () => {
 };
 
 const SkeletonFour = () => {
-  const first = {
-    initial: {
-      x: 20,
-      rotate: -5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
-  };
-  const second = {
-    initial: {
-      x: -20,
-      rotate: 5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
-  };
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2"
-    >
-      <motion.div
-        variants={first}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
-      >
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Just code in Vanilla Javascript
-        </p>
-        <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Delusional
-        </p>
-      </motion.div>
-      <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Tailwind CSS is cool, you know
-        </p>
-        <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Sensible
-        </p>
-      </motion.div>
-      <motion.div
-        variants={second}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
-      >
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          I love angular, RSC, and Redux.
-        </p>
-        <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Helpless
-        </p>
-      </motion.div>
-    </motion.div>
+    <div>
+      <div className="flex items-center mb-4 p-2">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+          TECH STACK
+        </h1>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="tracking-tight font-semibold">Frontend:</span>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">React</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">NextJS</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">TailwindCSS</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">ShadCN</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">Zustand</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-2 mt-4">
+        <span className="tracking-tight font-semibold">Backend:</span>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">NodeJS</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">ExpressJS</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">FastAPI</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-2 mt-4">
+        <span className="tracking-tight font-semibold dark:border-gray-600">Db:</span>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">MongoDB</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">MySQL</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-2 mt-4">
+        <span className="tracking-tight font-semibold ">Services:</span>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">Postman</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">Vercel</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">Git</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">Github</p>
+        </div>
+      </div>
+      <div className="flex items-center gap-2 mt-2">
+        <span className="tracking-tight font-semibold">Languages:</span>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">Javascript</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">C++</p>
+        </div>
+        <div className="border rounded-full p-2 dark:border-gray-600">
+          <p className="text-xs">Typescript</p>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -243,7 +230,7 @@ const SkeletonFive = () => {
     <div className=" overflow-hidden flex items-center justify-center">
       <BackgroundBeamsWithCollision>
         <SparklesText>
-          <h1 className="text-5xl md:text-4xl font-bold italic text-white flex items-center justify-center">
+          <h1 className="text-5xl md:text-4xl font-bold italic text-black dark:text-white flex items-center justify-center">
             PROJECTS
           </h1>
         </SparklesText>
@@ -254,7 +241,7 @@ const SkeletonFive = () => {
 
 const items = [
   {
-    // title: "AI Content Generation",
+    
     description: (
       <div className="flex items-center justify-between">
         <span className="text-sm">
@@ -268,7 +255,6 @@ const items = [
     ),
     header: <SkeletonOne />,
     className: "md:col-span-2",
-    // icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
 
   {
@@ -284,7 +270,6 @@ const items = [
     description: <span className="text-sm">Check out my latest projects</span>,
     header: <SkeletonFive />,
     className: "md:col-span-1 cursor-pointer ",
-    // icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
   },
   //   {
   //     title: "Automated Proofreading",
@@ -298,15 +283,9 @@ const items = [
   //     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   //   },
   {
-    title: "Sentiment Analysis",
-    description: (
-      <span className="text-sm">
-        Understand the sentiment of your text with AI analysis.
-      </span>
-    ),
+    
     header: <SkeletonFour />,
-    className: "md:col-span-2",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    className: "md:col-span-2 ",
   },
   {
     title: "Automated Proofreading",
@@ -316,7 +295,7 @@ const items = [
       </span>
     ),
     header: <SkeletonTwo />,
-    className: "md:col-span-2",
+    className: "md:col-span-3",
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
 ];
