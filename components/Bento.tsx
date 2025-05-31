@@ -11,8 +11,12 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { WordRotate } from "@/components/magicui/word-rotate";
-import { BracesIcon } from "lucide-react";
+import { ArrowRightCircleIcon, BracesIcon } from "lucide-react";
 import { div } from "motion/react-client";
+import Link from "next/link";
+import { AuroraBackground } from "./ui/aurora-background";
+import { SparklesText } from "./magicui/sparkles-text";
+import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 
 export function BentoGridThirdDemo() {
   return (
@@ -42,7 +46,7 @@ const SkeletonOne = () => {
         <div className="rounded-full overflow-hidden border w-20 h-20">
           <img src="/profile.jpg" alt="profile" />
         </div>
-        <span className="text-3xl font-bold">Khushi Roy.</span>
+        <span className="text-4xl font-bold">Khushi Roy.</span>
 
         <p className="text-sm text-gray-500">@royKhushi27</p>
       </div>
@@ -112,30 +116,36 @@ const SkeletonThree = () => {
       </div>
       <div className="mt-2 flex">
         <div className=" p-4">
-          <img
-            src="/leetcode.svg"
-            className="w-10 h-10 cursor-pointer"
-            alt="leetcode"
-          />
+          <Link href="https://leetcode.com/u/roykhushi432/">
+            <img
+              src="/leetcode.svg"
+              className="w-10 h-10 cursor-pointer"
+              alt="leetcode"
+            />
+          </Link>
         </div>
         <div className=" p-4">
-          <img
-            src="/github.svg"
-            className="w-10 h-10 cursor-pointer block dark:hidden"
-            alt="leetcode"
-          />
-          <img
-            src="/github-white.png"
-            alt="profile"
-            className="hidden dark:block w-10 h-10 cursor-pointer"
-          />
+          <Link href="https://github.com/roykhushi">
+            <img
+              src="/github.svg"
+              className="w-10 h-10 cursor-pointer block dark:hidden"
+              alt="leetcode"
+            />
+            <img
+              src="/github-white.png"
+              alt="profile"
+              className="hidden dark:block w-10 h-10 cursor-pointer"
+            />
+          </Link>
         </div>
         <div className=" p-4">
-          <img
-            src="/gfg.svg"
-            className="w-12 h-12 cursor-pointer"
-            alt="leetcode"
-          />
+          <Link href="https://www.geeksforgeeks.org/user/roykhushi432/">
+            <img
+              src="/gfg.svg"
+              className="w-12 h-12 cursor-pointer"
+              alt="leetcode"
+            />
+          </Link>
         </div>
       </div>
       <div className="mt-2">
@@ -227,64 +237,21 @@ const SkeletonFour = () => {
     </motion.div>
   );
 };
-const SkeletonFive = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
 
+const SkeletonFive = () => {
   return (
-    <motion.div
-      initial="initial"
-      whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
-    >
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
-      >
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
-        </p>
-      </motion.div>
-      <motion.div
-        variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
-      >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-      </motion.div>
-    </motion.div>
+    <div className=" overflow-hidden flex items-center justify-center">
+      <BackgroundBeamsWithCollision>
+        <SparklesText>
+          <h1 className="text-5xl md:text-4xl font-bold italic text-white flex items-center justify-center">
+            PROJECTS
+          </h1>
+        </SparklesText>
+      </BackgroundBeamsWithCollision>
+    </div>
   );
 };
+
 const items = [
   {
     // title: "AI Content Generation",
@@ -313,15 +280,11 @@ const items = [
   },
 
   {
-    title: "Text Summarization",
-    description: (
-      <span className="text-sm">
-        Summarize your lengthy documents with AI technology.
-      </span>
-    ),
+    title: "My Projects </>",
+    description: <span className="text-sm">Check out my latest projects</span>,
     header: <SkeletonFive />,
-    className: "md:col-span-1",
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+    className: "md:col-span-1 cursor-pointer ",
+    // icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
   },
   //   {
   //     title: "Automated Proofreading",
