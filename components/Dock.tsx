@@ -56,11 +56,11 @@ const DATA = {
   ],
   contact: {
     social: {
-      GitHub: {
-        name: "GitHub",
-        url: "https://github.com/roykhushi",
-        icon: Icons.github,
-      },
+      // GitHub: {
+      //   name: "GitHub",
+      //   url: "https://github.com/roykhushi",
+      //   icon: Icons.github,
+      // },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/khushi-roy-a98273224/",
