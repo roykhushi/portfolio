@@ -10,8 +10,14 @@ import Link from "next/link";
 import { SparklesText } from "./magicui/sparkles-text";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 import { Button } from "./ui/button";
+import { AuroraText } from "./magicui/aurora-text";
 
 export function BentoGridThirdDemo() {
+
+function openResumeFromPublic(): void {
+  window.open('/Khushi_Roy_Resume.pdf', '_blank');
+}
+
   return (
     <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
       {items.map((item, i) => (
@@ -29,6 +35,11 @@ export function BentoGridThirdDemo() {
 }
 
 const SkeletonOne = () => {
+  function openResume(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    event.preventDefault();
+    window.open('/Khushi_Roy_Resume.pdf', '_blank');
+  }
+
   return (
     <motion.div
       initial="initial"
@@ -41,14 +52,14 @@ const SkeletonOne = () => {
         </div>
         <span className="text-4xl font-bold">Khushi Roy.</span>
 
-        <Button>Resume</Button>
+        <Button className="cursor-pointer" onClick={openResume}>Resume</Button>
       </div>
 
       <div className="mt-4 pt-4 flex items-center gap-2 p-2">
         <p className="text-2xl font-bold">I build</p>{" "}
         <WordRotate
           words={["WebApps", "Frontend", "Backend"]}
-          className="text-2xl font-bold text-blue-700"
+          className="text-2xl font-bold text-blue-600"
         />
       </div>
       <div className="mt-0 pt-0 p-2">
@@ -66,7 +77,7 @@ const SkeletonTwo = () => {
     <div>
       <div>
         <h1 className="text-2xl md:text-4xl text-center font-bold italic underline decoration-blue-600 decoration-wavy">
-          Experience
+          EXPERIENCE
         </h1>
       </div>
       <div className="flex items-center p-2 gap-2">
@@ -107,7 +118,7 @@ const SkeletonThree = () => {
   return (
     <div>
       <div className="mt-2 mb-2 p-4">
-        <h1 className="text-5xl md:text-6xl font-bold">LINKS</h1>
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight"><AuroraText speed={0.75}>LINKS</AuroraText></h1>
       </div>
       <div className="mt-2 flex">
         <div className=" p-4">
@@ -258,14 +269,14 @@ const items = [
       </div>
     ),
     header: <SkeletonOne />,
-    className: "md:col-span-2",
+    className: "md:col-span-2 shadow-2xl dark:shadow-lg",
   },
 
   {
     title: "Coding Profiles",
     description: <span className="text-sm">Check out my coding profiles</span>,
     header: <SkeletonThree />,
-    className: "md:col-span-1",
+    className: "md:col-span-1 shadow-2xl dark:shadow-lg",
     icon: <BracesIcon className="h-4 w-4 text-neutral-500" />,
   },
 
@@ -273,12 +284,12 @@ const items = [
     title: "My Projects </>",
     description: <span className="text-sm">Check out my latest projects</span>,
     header: <SkeletonFive />,
-    className: "md:col-span-1 cursor-pointer ",
+    className: "md:col-span-1 cursor-pointer shadow-2xl dark:shadow-lg",
   },
 
   {
     header: <SkeletonFour />,
-    className: "md:col-span-2 ",
+    className: "md:col-span-2 shadow-2xl dark:shadow-lg",
   },
   {
     // title: "Automated Proofreading",
@@ -288,7 +299,7 @@ const items = [
     //   </span>
     // ),
     header: <SkeletonTwo />,
-    className: "md:col-span-3",
+    className: "md:col-span-3 shadow-2xl dark:shadow-lg",
     // icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
 ];
