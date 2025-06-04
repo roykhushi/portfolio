@@ -1,8 +1,8 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import React from "react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import { IconFileBroken } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { BracesIcon } from "lucide-react";
@@ -11,12 +11,9 @@ import { SparklesText } from "./magicui/sparkles-text";
 import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 import { Button } from "./ui/button";
 import { AuroraText } from "./magicui/aurora-text";
+import { useRouter } from "next/navigation";
 
 export function BentoGridThirdDemo() {
-
-function openResumeFromPublic(): void {
-  window.open('/Khushi_Roy_Resume.pdf', '_blank');
-}
 
   return (
     <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
@@ -242,8 +239,16 @@ const SkeletonFour = () => {
 };
 
 const SkeletonFive = () => {
+
+  
+  const router = useRouter();
+  const navigateToProjects = () => {
+    router.push('/projects');
+  }
+  
   return (
-    <div className=" overflow-hidden flex items-center justify-center">
+    <div className=" overflow-hidden flex items-center justify-center"
+    onClick={navigateToProjects}>
       <BackgroundBeamsWithCollision>
         <SparklesText>
           <h1 className="text-5xl md:text-4xl font-bold italic text-black dark:text-white flex items-center justify-center">
@@ -254,6 +259,8 @@ const SkeletonFive = () => {
     </div>
   );
 };
+
+
 
 const items = [
   {
