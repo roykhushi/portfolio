@@ -267,7 +267,7 @@ const items = [
     description: (
       <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
         <span className="text-sm">
-          Let's connect and build something awesome together ✨
+          Let&apos;s connect and build something awesome together ✨
         </span>
         <div className="flex items-center gap-2">
           <div className="rounded-full bg-green-600 w-2 h-2" />
