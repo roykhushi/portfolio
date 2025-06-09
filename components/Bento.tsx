@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 export function BentoGridThirdDemo() {
 
   return (
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+    <BentoGrid className="max-w-4xl mx-auto grid-cols-1 md:auto-rows-[20rem] gap-4 p-4">
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -265,7 +265,7 @@ const SkeletonFive = () => {
 const items = [
   {
     description: (
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
         <span className="text-sm">
           Let's connect and build something awesome together ✨
         </span>
@@ -276,14 +276,14 @@ const items = [
       </div>
     ),
     header: <SkeletonOne />,
-    className: "md:col-span-2 shadow-2xl dark:shadow-lg",
+    className: "col-span-1 md:col-span-2 shadow-2xl dark:shadow-lg",
   },
 
   {
     title: "Coding Profiles",
     description: <span className="text-sm">Check out my coding profiles</span>,
     header: <SkeletonThree />,
-    className: "md:col-span-1 shadow-2xl dark:shadow-lg",
+    className: "col-span-1 md:col-span-1 shadow-2xl dark:shadow-lg",
     icon: <BracesIcon className="h-4 w-4 text-neutral-500" />,
   },
 
@@ -291,12 +291,12 @@ const items = [
     title: "My Projects </>",
     description: <span className="text-sm">Check out my latest projects</span>,
     header: <SkeletonFive />,
-    className: "md:col-span-1 cursor-pointer shadow-2xl dark:shadow-lg",
+    className: "col-span-1 cursor-pointer shadow-2xl dark:shadow-lg",
   },
 
   {
     header: <SkeletonFour />,
-    className: "md:col-span-2 shadow-2xl dark:shadow-lg",
+    className: "col-span-1 md:col-span-2 shadow-2xl dark:shadow-lg",
   },
   {
     // title: "Automated Proofreading",
@@ -306,7 +306,7 @@ const items = [
     //   </span>
     // ),
     header: <SkeletonTwo />,
-    className: "md:col-span-3 shadow-2xl dark:shadow-lg",
+    className: "col-span-1 md:col-span-3 shadow-2xl dark:shadow-lg",
     // icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
 ];
