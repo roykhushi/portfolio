@@ -90,8 +90,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose, currentIndex }}
     >
-      <div className="relative w-full">
-        <div className="mr-10 flex justify-end gap-2">
+      <div className="relative w-full ">
+        <div className="mr-10 flex justify-end gap-2 ">
           <button
             className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 dark:bg-gray-100 disabled:opacity-50"
             onClick={scrollLeft}
@@ -199,7 +199,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 z-50 h-screen overflow-auto">
+          <div className="fixed inset-0 z-50 h-screen overflow-auto ">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

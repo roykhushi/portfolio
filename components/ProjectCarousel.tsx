@@ -12,7 +12,7 @@ export function ProjectCarousel() {
 
   return (
     <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl tracking-tight md:text-3xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+      <h2 className="max-w-7xl pl-16 sm:ml-0 md:ml-0 mx-auto text-xl tracking-tight md:text-3xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         Here are some of my Projects
       </h2>
       <Carousel items={cards} />
@@ -115,7 +115,7 @@ const ManimAI = () => {
 
 const data = [
   {
-    category: "Understand Mathematical Concepts through Animations",
+    category: "Understand Mathematical Concepts through Animations:",
     title: "ManimAI",
     src: "/manim.png",
     content: <ManimAI />,

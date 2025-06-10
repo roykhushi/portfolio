@@ -13,6 +13,7 @@ export default function Projects() {
         <div className="w-full">
           <ProjectCarousel />
         </div>
+        
       </div>
     </>
   );

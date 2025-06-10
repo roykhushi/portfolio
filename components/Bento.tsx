@@ -31,6 +31,8 @@ export function BentoGridThirdDemo() {
   );
 }
 
+
+
 const SkeletonOne = () => {
   function openResume(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
     event.preventDefault();
@@ -168,7 +170,7 @@ const SkeletonFour = () => {
       
       <div className="mb-4">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+          <span className="tracking-tight font-semibold text-sm sm:text-md whitespace-nowrap">
             Frontend:
           </span>
           <div className="flex flex-wrap items-center gap-2">
@@ -193,7 +195,7 @@ const SkeletonFour = () => {
 
       <div className="mb-4">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+          <span className="tracking-tight font-semibold text-sm sm:text-md whitespace-nowrap">
             Backend:
           </span>
           <div className="flex flex-wrap items-center gap-2">
@@ -212,7 +214,7 @@ const SkeletonFour = () => {
 
       <div className="mb-4">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+          <span className="tracking-tight font-semibold text-sm sm:text-md whitespace-nowrap">
             Database:
           </span>
           <div className="flex flex-wrap items-center gap-2">
@@ -228,7 +230,7 @@ const SkeletonFour = () => {
 
       <div className="mb-4">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+          <span className="tracking-tight font-semibold text-sm sm:text-md whitespace-nowrap">
             Services:
           </span>
           <div className="flex flex-wrap items-center gap-2">
@@ -250,7 +252,7 @@ const SkeletonFour = () => {
 
       <div>
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+          <span className="tracking-tight font-semibold text-sm sm:text-md whitespace-nowrap">
             Languages:
           </span>
           <div className="flex flex-wrap items-center gap-2">

@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Poppins, Montserrat } from 'next/font/google'
+import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import {Toaster} from "react-hot-toast";
 
-const poppins = Poppins({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: "300"
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: "300",
 });
 
-const montserrat = Montserrat({ 
-  subsets: ['latin'],
-  variable: '--font-playfair',
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -26,20 +27,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${poppins.variable} ${montserrat.variable} antialiased`}
       >
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-          <Analytics />
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+        <Analytics />
+        <Toaster position="top-right" reverseOrder={false} />
       </body>
     </html>
   );
