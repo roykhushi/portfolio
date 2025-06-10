@@ -43,7 +43,7 @@ const SkeletonOne = () => {
       whileHover="animate"
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
-      <div className="flex items-center gap-14 justify-between">
+      <div className="flex flex-col sm:flex-row items-center gap-14 justify-between">
         <div className="rounded-full overflow-hidden border w-20 h-20">
           <img src="/profile.jpg" alt="profile" />
         </div>
@@ -61,7 +61,7 @@ const SkeletonOne = () => {
       </div>
       <div className="mt-0 pt-0 p-2">
         <p className="text-sm font-semibold">
-          Hello, I am Khushi Roy! a developer based out of New Delhi - India. I
+          Hello, I am Khushi Roy! a developer based out of New Delhi , India. I
           craft high-performance, responsive and aesthetic web applications.
         </p>
       </div>
@@ -71,40 +71,39 @@ const SkeletonOne = () => {
 
 const SkeletonTwo = () => {
   return (
-    <div>
-      <div>
-        <h1 className="text-2xl md:text-4xl text-center font-bold italic underline decoration-blue-600 decoration-wavy">
+    <div className="w-full max-w-full  px-3 sm:px-4">
+      <div className="mb-4 sm:mb-6 ">
+        <h1 className="text-xl sm:text-2xl md:text-4xl text-center font-bold italic underline decoration-blue-600 decoration-wavy">
           EXPERIENCE
         </h1>
       </div>
-      <div className="flex items-center p-2 gap-2">
-        <h2 className="">AKB Tech</h2>
-        <span className="">|</span>
-        <h2>Front-End Developer</h2>
+      <div className="mb-3 sm:mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 px-2">
+          <h2 className="text-base sm:text-lg font-semibold">AKB Tech</h2>
+          <span className="hidden sm:inline text-gray-500">|</span>
+          <h2 className="text-sm sm:text-base text-gray-600 dark:text-gray-400">Front-End Developer</h2>
+        </div>
+        <div className="px-2 mt-1">
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">October 2024 - December 2024</p>
+        </div>
       </div>
-      <div className="flex items-center p-2 ml-2">
-        <p className="text-xs">October 2024-December 2024</p>
-      </div>
-      <div className="flex items-center p-2">
-        <ul className="list-disc mx-auto">
-          <li className="text-sm">
+      <div className="flex flex-wrap">
+        <ul className="list-disc">
+          <li className="text-xs sm:text-base md:text-sm leading-relaxed break-words">
             Designed & optimized responsive UIs for the company’s website and
             admin dashboards using React.js, Tailwind CSS, Material UI, and
             Framer Motion.
           </li>
-          <li className="text-sm">
+          <li className="text-xs sm:text-base md:text-sm leading-relaxed break-words">
             Optimized state management with Zustand, reducing re-renders by 30%,
-            and integrated OTPless authentication, cutting login time by 40%.
+            and integrated OTPless authentication.
           </li>
-          <li className="text-sm">
+          <li className="text-xs sm:text-base md:text-sm leading-relaxed break-words">
             Enhanced website performance by 44% through lazy loading, SEO
             enhancements and code enhancements, and code optimization, reducing
             page load time by 1.5 seconds.
           </li>
-          <li className="text-sm">
-            Collaborated in regular code reviews ensuring code quality,
-            maintainability, and scalability.
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -160,78 +159,111 @@ const SkeletonThree = () => {
 
 const SkeletonFour = () => {
   return (
-    <div>
+    <div className="w-full max-w-full overflow-hidden">
       <div className="flex items-center mb-4 p-2">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight underline decoration-wavy decoration-blue-600">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight underline decoration-wavy decoration-blue-600">
           TECH STACK
         </h1>
       </div>
-      <div className="flex items-center gap-2">
-        <span className="tracking-tight font-semibold">Frontend:</span>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">React</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">NextJS</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">TailwindCSS</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">ShadCN</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">Zustand</p>
-        </div>
-      </div>
-      <div className="flex items-center gap-2 mt-4">
-        <span className="tracking-tight font-semibold">Backend:</span>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">NodeJS</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">ExpressJS</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">FastAPI</p>
+      
+      <div className="mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+            Frontend:
+          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">React</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">NextJS</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">TailwindCSS</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">ShadCN</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">Zustand</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="flex items-center gap-2 mt-4">
-        <span className="tracking-tight font-semibold dark:border-gray-600">
-          Db:
-        </span>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">MongoDB</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">MySQL</p>
-        </div>
-      </div>
-      <div className="flex items-center gap-2 mt-4">
-        <span className="tracking-tight font-semibold ">Services:</span>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">Postman</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">Vercel</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">Git</p>
-        </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">Github</p>
+
+      <div className="mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+            Backend:
+          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">NodeJS</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">ExpressJS</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">FastAPI</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="flex items-center gap-2 mt-2">
-        <span className="tracking-tight font-semibold">Languages:</span>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">Javascript</p>
+
+      <div className="mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+            Database:
+          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">MongoDB</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">MySQL</p>
+            </div>
+          </div>
         </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">C++</p>
+      </div>
+
+      <div className="mb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+            Services:
+          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">Postman</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">Vercel</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">Git</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">Github</p>
+            </div>
+          </div>
         </div>
-        <div className="border rounded-full p-2 dark:border-gray-600">
-          <p className="text-xs">Typescript</p>
+      </div>
+
+      <div>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+          <span className="tracking-tight font-semibold text-sm sm:text-base whitespace-nowrap">
+            Languages:
+          </span>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">Javascript</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">C++</p>
+            </div>
+            <div className="border rounded-full px-3 py-1 dark:border-gray-600 flex-shrink-0">
+              <p className="text-xs whitespace-nowrap">Typescript</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

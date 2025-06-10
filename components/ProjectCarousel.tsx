@@ -115,10 +115,10 @@ const ManimAI = () => {
 
 const data = [
   {
-    category: "Chat Application",
-    title: "Talksy",
-    src: "/talksy.png",
-    content: <Talksy />,
+    category: "Understand Mathematical Concepts through Animations",
+    title: "ManimAI",
+    src: "/manim.png",
+    content: <ManimAI />,
   },
   {
     category: "Chrome Extension : Enhance Productivity",
@@ -127,16 +127,9 @@ const data = [
     content: <FocusFlow />,
   },
   {
-    category: "Understand Mathematical Concepts through Animations",
-    title: "ManimAI",
-    src: "/manim.png",
-    content: <ManimAI />,
+    category: "Chat Application",
+    title: "Talksy",
+    src: "/talksy.png",
+    content: <Talksy />,
   },
-
-  // {
-  //   category: "iOS",
-  //   title: "Photography just got better.",
-  //   src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   content: <DummyContent />,
-  // },
 ];
