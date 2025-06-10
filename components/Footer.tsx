@@ -40,7 +40,7 @@ export function Footer() {
         duration: 0.4,
         ease: "easeOut"
       }}
-    className="container bg-white dark:bg-black border-t dark:border-white/10 mt-auto">
+    className="bg-white dark:bg-black border-t dark:border-white/10 mt-auto">
       <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-between">
