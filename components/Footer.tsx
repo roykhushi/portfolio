@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from './ui/button';
 import { Send } from 'lucide-react';
 import toast from 'react-hot-toast';
+// import { Loading } from './ui/loading';
 
 export function Footer() {
   const [formData, setFormData] = useState({
@@ -13,8 +14,11 @@ export function Footer() {
     message: ''
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -30,6 +34,9 @@ export function Footer() {
     } catch (error) {
       toast.error('Failed to send message.');
     }
+    finally{
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -41,6 +48,7 @@ export function Footer() {
         ease: "easeOut"
       }}
     className="bg-white dark:bg-black border-t dark:border-white/10 mt-auto">
+      {/* {isLoading && <Loading />} */}
       <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="flex flex-col justify-between">

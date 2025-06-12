@@ -277,11 +277,22 @@ export const BlurImage = ({
   ...rest
 }: ImageProps) => {
   const [isLoading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const mobileScreen = () => {
+    if(window && window.innerWidth < 768){
+      setIsMobile(true);
+    }
+  };
+  useEffect(()=>{
+    mobileScreen();
+  },[]);
   return (
     <img
       className={cn(
         "h-full w-full transition duration-300",
         isLoading ? "blur-sm" : "blur-0",
+        isMobile? "blur-sm" : "blur-0",
         className,
       )}
       onLoad={() => setLoading(false)}
