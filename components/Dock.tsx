@@ -52,15 +52,10 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
+    { href: "https://medium.com/@roykhushi432", icon: PencilIcon, label: "Blog" },
   ],
   contact: {
     social: {
-      // GitHub: {
-      //   name: "GitHub",
-      //   url: "https://github.com/roykhushi",
-      //   icon: Icons.github,
-      // },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/khushi-roy-a98273224/",
