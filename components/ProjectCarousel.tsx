@@ -113,7 +113,41 @@ const ManimAI = () => {
   );
 };
 
+const ContestHub = () => {
+  return (
+    <>
+      {[...new Array(1).fill(1)].map((_, index) => {
+        return (
+          <div
+            key={"dummy-content" + index}
+            className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          >
+            <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+              <span className="font-bold text-neutral-700 dark:text-neutral-200"></span>{" "}
+              A web app to discover and track upcoming programming contests from major platforms like LeetCode, Codeforces, CodeChef, and AtCoder.
+            </p>{" "}
+            <div className="flex items-center mt-4 p-4 md:p-8 gap-8">
+              <Link href="https://github.com/roykhushi/contest-hub" target="_blank">
+                <GithubIcon className="size-14" />
+              </Link>
+              <Link href="https://contest-hub-omega.vercel.app/" target="_blank">
+                <Globe className="size-14" />
+              </Link>
+            </div>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
 const data = [
+  {
+    category: "Track Your Upcoming Contests:",
+    title: "ContestHub",
+    src: "/contest-hub.png",
+    content: <ContestHub />,
+  },
   {
     category: "Understand Mathematical Concepts through Animations:",
     title: "ManimAI",
