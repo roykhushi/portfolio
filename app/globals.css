@@ -46,6 +46,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter-tight);
   --font-serif: var(--font-instrument-serif);
+  --font-mono: var(--font-geist-mono);
+  --color-ice: #c9fbff;
+  --color-aqua: #c2fcf7;
+  --color-seafoam: #85bdbf;
+  --color-lagoon: #57737a;
+  --color-abyss: #040f0f;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -81,73 +87,43 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* Palette: https://coolors.co/palette/c9fbff-c2fcf7-85bdbf-57737a-040f0f
+   ice #c9fbff · aqua #c2fcf7 · seafoam #85bdbf · lagoon #57737a · abyss #040f0f
+   Dark theme: abyss is the page, ice is the text, seafoam is the accent. The two card
+   surfaces below are abyss lightened toward lagoon, so no off-palette hue is introduced. */
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: #040f0f;
+  --foreground: #c9fbff;
+  --card: #0b1e20;
+  --card-foreground: #c9fbff;
+  --popover: #0b1e20;
+  --popover-foreground: #c9fbff;
+  --primary: #c9fbff;
+  --primary-foreground: #040f0f;
+  --secondary: #12292c;
+  --secondary-foreground: #c9fbff;
+  --muted: #12292c;
+  --muted-foreground: #85bdbf;
+  --accent: #12292c;
+  --accent-foreground: #c9fbff;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: rgb(201 251 255 / 12%);
+  --input: rgb(201 251 255 / 16%);
+  --ring: #85bdbf;
+  --chart-1: #c9fbff;
+  --chart-2: #c2fcf7;
+  --chart-3: #85bdbf;
+  --chart-4: #57737a;
+  --chart-5: #12292c;
+  --sidebar: #0b1e20;
+  --sidebar-foreground: #c9fbff;
+  --sidebar-primary: #85bdbf;
+  --sidebar-primary-foreground: #040f0f;
+  --sidebar-accent: #57737a;
+  --sidebar-accent-foreground: #c9fbff;
+  --sidebar-border: rgb(201 251 255 / 12%);
+  --sidebar-ring: #85bdbf;
 }
 
 html {
@@ -166,7 +142,7 @@ body {
 }
 
 ::selection {
-  background: oklch(0.79 0.17 75 / 0.35);
+  background: rgb(133 189 191 / 0.35);
 }
 
 /* Hero headline entrance. Pure CSS so it runs on first paint, before hydration.
@@ -214,4 +190,111 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ---- Cursor cat -------------------------------------------------------- */
+/* The native cursor is hidden only while the cat is active (fine pointer + enabled),
+   and restored over text fields so typing stays precise. */
+html.has-cat,
+html.has-cat * {
+  cursor: none !important;
+}
+html.has-cat input,
+html.has-cat textarea,
+html.has-cat select {
+  cursor: text !important;
+}
+
+.cat-svg {
+  overflow: visible;
+}
+.cat-tail,
+.cat-blink,
+.cat-body-bob {
+  transform-box: fill-box;
+}
+.cat-tail {
+  transform-origin: 8% 92%;
+}
+.cat-blink {
+  transform-origin: center;
+}
+.cat-body-bob {
+  transform-origin: 50% 100%;
+}
+.cat-eyes-open,
+.cat-eyes-happy,
+.cat-eyes-sleep {
+  display: none;
+}
+.cat-svg[data-eyes="open"] .cat-eyes-open,
+.cat-svg[data-eyes="happy"] .cat-eyes-happy,
+.cat-svg[data-eyes="sleep"] .cat-eyes-sleep {
+  display: inline;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cat-tail {
+    animation: cat-tail 2.4s ease-in-out infinite;
+  }
+  .cat-svg[data-moving="true"] .cat-tail {
+    animation-duration: 0.45s;
+  }
+  .cat-blink {
+    animation: cat-blink 4.5s infinite;
+  }
+  .cat-body-bob {
+    animation: cat-breathe 3s ease-in-out infinite;
+  }
+  .cat-svg[data-moving="true"] .cat-body-bob {
+    animation: cat-bob 0.32s ease-in-out infinite;
+  }
+}
+@keyframes cat-tail {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(10deg); }
+}
+@keyframes cat-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+@keyframes cat-breathe {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.03); }
+}
+@keyframes cat-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2.5px); }
+}
+
+
+/* ---- Hero clock --------------------------------------------------------- */
+.live-dot {
+  position: relative;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 9999px;
+  background: #85bdbf;
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* Pulse ring is a pseudo-element animated with transform + opacity only. */
+  .live-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: inherit;
+    animation: live-pulse 2s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+  }
+  .clock-colon {
+    animation: colon-blink 1s steps(1) infinite;
+  }
+}
+@keyframes live-pulse {
+  from { transform: scale(1); opacity: 0.6; }
+  to { transform: scale(3.2); opacity: 0; }
+}
+@keyframes colon-blink {
+  50% { opacity: 0.25; }
 }

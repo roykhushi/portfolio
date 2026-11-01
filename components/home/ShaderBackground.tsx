@@ -10,14 +10,16 @@ import {
   useTransform,
 } from "motion/react";
 
-const NAVY = ["#02040a", "#0a1a3a", "#1b4f95", "#050d1c", "#12315f"];
-const WARM = ["#2a0630", "#0e8a86", "#e3a21a", "#b3202a", "#4a0f45"];
+// Mostly abyss with soft slate and seafoam glows (hero).
+const BASE = ["#040f0f", "#57737a", "#040f0f", "#040f0f", "#85bdbf", "#040f0f"];
+// Brighter second scene for the work section: more lagoon and seafoam, a little aqua.
+const ALT = ["#57737a", "#85bdbf", "#040f0f", "#57737a", "#c2fcf7", "#040f0f"];
 
 // A soft gradient doesn't need retina resolution; keep GPU cost low.
 const GL = { minPixelRatio: 1, maxPixelCount: 900_000 } as const;
 
 /**
- * Fixed full-screen gradient. The navy layer is always on; the warm layer
+ * Fixed full-screen gradient. The base layer is always on; the alt layer
  * fades in while the #work section is on screen and out again after it.
  * With reduced motion the gradient is static (speed 0 stops the rAF loop).
  */
@@ -59,15 +61,15 @@ export function ShaderBackground() {
     return 1 - (y - c) / (d - c);
   });
 
-  // Stop the warm layer's render loop while it's invisible.
+  // Stop the alt layer's render loop while it's invisible.
   useMotionValueEvent(warmOpacity, "change", (v) => setWarmOn(v > 0.01));
 
   return (
-    <div aria-hidden className="fixed inset-0 z-0 overflow-hidden bg-[#02040a]">
+    <div aria-hidden className="fixed inset-0 z-0 overflow-hidden bg-[#040f0f]">
       <MeshGradient
         {...GL}
         style={{ width: "100%", height: "100%" }}
-        colors={NAVY}
+        colors={BASE}
         distortion={0.9}
         swirl={0.35}
         grainMixer={0.25}
@@ -78,7 +80,7 @@ export function ShaderBackground() {
         <MeshGradient
           {...GL}
           style={{ width: "100%", height: "100%" }}
-          colors={WARM}
+          colors={ALT}
           distortion={0.85}
           swirl={0.5}
           grainMixer={0.3}
@@ -86,8 +88,8 @@ export function ShaderBackground() {
           speed={reduce || !warmOn ? 0 : 0.22}
         />
       </motion.div>
-      {/* Scrim keeps small white text readable over the brighter warm patches. */}
-      <div className="absolute inset-0 bg-black/25" />
+      {/* Scrim keeps ice-coloured text readable over the brighter patches of the second scene. */}
+      <div className="absolute inset-0 bg-[#040f0f]/45" />
     </div>
   );
 }

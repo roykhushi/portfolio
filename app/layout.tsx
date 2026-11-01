@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter_Tight, Instrument_Serif } from "next/font/google";
+import { Inter_Tight, Instrument_Serif, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
@@ -19,14 +19,20 @@ const serif = Instrument_Serif({
   display: "swap",
 });
 
+const mono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Khushi Roy — Full-stack developer",
+  title: "Khushi Roy — Software developer",
   description:
     "Khushi Roy is a developer based in New Delhi, India, building high-performance, responsive and aesthetic web applications.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#02040a",
+  themeColor: "#040f0f",
   colorScheme: "dark",
 };
 
@@ -37,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${sans.variable} ${serif.variable} antialiased`}>
+      <body className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -33,7 +33,7 @@ function ProjectStack() {
               inert={!front}
               aria-hidden={!front}
               aria-label={`${p.title}, project ${i + 1} of ${n}`}
-              className="absolute inset-0 flex flex-col rounded-3xl border border-white/10 bg-neutral-950 p-5 shadow-2xl shadow-black/40 md:p-6"
+              className="absolute inset-0 flex flex-col rounded-3xl border border-foreground/10 bg-card p-5 shadow-2xl shadow-black/50 md:p-6"
               style={{ zIndex: n - depth, transformOrigin: "top right" }}
               initial={false}
               animate={{
@@ -47,13 +47,13 @@ function ProjectStack() {
             >
               <header className="flex items-center gap-4">
                 <h3 className="text-xl tracking-tight md:text-2xl">{p.title}</h3>
-                <span aria-hidden className="h-px flex-1 bg-white/20" />
-                <span className="text-xs uppercase tracking-[0.06em] text-white/50">
+                <span aria-hidden className="h-px flex-1 bg-foreground/20" />
+                <span className="text-xs uppercase tracking-[0.06em] text-foreground/50">
                   {p.category}
                 </span>
               </header>
 
-              <div className="relative mt-5 min-h-0 flex-1 overflow-hidden rounded-2xl bg-neutral-900">
+              <div className="relative mt-5 min-h-0 flex-1 overflow-hidden rounded-2xl bg-secondary">
                 <Image
                   src={p.image}
                   alt={`${p.title} screenshot`}
@@ -63,7 +63,7 @@ function ProjectStack() {
                 />
               </div>
 
-              <p className="mt-5 max-w-prose text-sm leading-relaxed text-white/70 md:text-base">
+              <p className="mt-5 max-w-prose text-sm leading-relaxed text-foreground/70 md:text-base">
                 {p.blurb}
               </p>
 
@@ -72,7 +72,7 @@ function ProjectStack() {
                   href={p.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-white/10 active:scale-[0.97] [touch-action:manipulation]"
+                  className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-4 py-2 text-sm transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-foreground/10 active:scale-[0.97] [touch-action:manipulation]"
                 >
                   <GithubIcon className="size-4" aria-hidden /> GitHub
                 </a>
@@ -80,7 +80,7 @@ function ProjectStack() {
                   href={p.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-white/85 active:scale-[0.97] [touch-action:manipulation]"
+                  className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-foreground/85 active:scale-[0.97] [touch-action:manipulation]"
                 >
                   <ExternalLink className="size-4" aria-hidden /> {p.liveLabel}
                 </a>
@@ -95,7 +95,7 @@ function ProjectStack() {
           type="button"
           onClick={() => go(-1)}
           aria-label="Previous project"
-          className="grid size-11 place-items-center rounded-full border border-white/25 transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-white/10 active:scale-[0.95] [-webkit-user-select:none] [user-select:none] [touch-action:manipulation]"
+          className="grid size-11 place-items-center rounded-full border border-foreground/25 transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-foreground/10 active:scale-[0.95] [-webkit-user-select:none] [user-select:none] [touch-action:manipulation]"
         >
           <ArrowLeft className="size-4" aria-hidden />
         </button>
@@ -103,11 +103,11 @@ function ProjectStack() {
           type="button"
           onClick={() => go(1)}
           aria-label="Next project"
-          className="grid size-11 place-items-center rounded-full border border-white/25 transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-white/10 active:scale-[0.95] [-webkit-user-select:none] [user-select:none] [touch-action:manipulation]"
+          className="grid size-11 place-items-center rounded-full border border-foreground/25 transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-foreground/10 active:scale-[0.95] [-webkit-user-select:none] [user-select:none] [touch-action:manipulation]"
         >
           <ArrowRight className="size-4" aria-hidden />
         </button>
-        <p className="text-sm tabular-nums text-white/60" aria-live="polite">
+        <p className="text-sm tabular-nums text-foreground/60" aria-live="polite">
           {String(active + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
         </p>
       </div>
@@ -119,18 +119,18 @@ export function Work() {
   return (
     <section
       id="work"
-      className="mx-auto grid min-h-svh w-full max-w-7xl scroll-mt-20 items-center gap-12 px-6 py-24 md:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] md:gap-20 md:px-14"
+      className="mx-auto grid min-h-svh w-full max-w-7xl scroll-mt-20 items-center gap-12 px-6 py-24 md:px-14 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:gap-20"
     >
       <div>
         <p className="text-2xl leading-[1.25] tracking-tight md:text-3xl">
           I&apos;m Khushi Roy, I craft{" "}
-          <em className="whitespace-nowrap font-serif text-[1.1em] italic text-teal-300">
+          <em className="whitespace-nowrap font-serif text-[1.1em] italic text-seafoam">
             high-performance
           </em>
           ,
           responsive and aesthetic web applications, from the interface to the database.
         </p>
-        <ul className="mt-8 space-y-1 text-[11px] uppercase tracking-[0.04em] text-white/50">
+        <ul className="mt-8 space-y-1 text-[11px] uppercase tracking-[0.04em] text-foreground/50">
           {TAGS.map((t) => (
             <li key={t}>{t}</li>
           ))}
