@@ -71,47 +71,6 @@ const SkeletonOne = () => {
   );
 };
 
-const SkeletonTwo = () => {
-  return (
-    <div className="w-full max-w-full  px-3 sm:px-4">
-      <div className="mb-4 sm:mb-6 ">
-        <h1 className="text-xl sm:text-2xl md:text-4xl text-center font-bold italic underline decoration-blue-600 decoration-wavy">
-          EXPERIENCE
-        </h1>
-      </div>
-      <div className="mb-3 sm:mb-4">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 px-2">
-          <h2 className="text-base sm:text-lg font-semibold">AKB Tech</h2>
-          <span className="hidden sm:inline text-gray-500">|</span>
-          <h2 className="text-sm sm:text-base text-gray-600 dark:text-gray-400">Front-End Developer</h2>
-        </div>
-        <div className="px-2 mt-1">
-          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">October 2024 - December 2024</p>
-        </div>
-      </div>
-      <div className="flex flex-wrap">
-        <ul className="list-disc">
-          <li className="text-xs sm:text-base md:text-sm leading-relaxed break-words">
-            Designed & optimized responsive UIs for the company’s website and
-            admin dashboards using React.js, Tailwind CSS, Material UI, and
-            Framer Motion.
-          </li>
-          <li className="text-xs sm:text-base md:text-sm leading-relaxed break-words">
-            Optimized state management with Zustand, reducing re-renders by 30%,
-            and integrated OTPless authentication.
-          </li>
-          <li className="text-xs sm:text-base md:text-sm leading-relaxed break-words">
-            Enhanced website performance by 44% through lazy loading, SEO
-            enhancements and code enhancements, and code optimization, reducing
-            page load time by 1.5 seconds.
-          </li>
-          
-        </ul>
-      </div>
-    </div>
-  );
-};
-
 const SkeletonThree = () => {
   return (
     <div>
@@ -331,16 +290,5 @@ const items = [
   {
     header: <SkeletonFour />,
     className: "col-span-1 md:col-span-2 shadow-2xl dark:shadow-lg",
-  },
-  {
-    // title: "Automated Proofreading",
-    // description: (
-    //   <span className="text-sm">
-    //     Let AI handle the proofreading of your documents.
-    //   </span>
-    // ),
-    header: <SkeletonTwo />,
-    className: "col-span-1 md:col-span-3 shadow-2xl dark:shadow-lg",
-    // icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
 ];

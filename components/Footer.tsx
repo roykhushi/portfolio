@@ -1,7 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { useState } from 'react';
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Button } from './ui/button';
 import { Send } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -47,7 +47,7 @@ export function Footer() {
         duration: 0.4,
         ease: "easeOut"
       }}
-    className="bg-white dark:bg-black border-t dark:border-white/10 mt-auto">
+    className="bg-background/70 backdrop-blur-md border-t border-white/10 mt-auto">
       {/* {isLoading && <Loading />}pro */}
       <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -57,7 +57,7 @@ export function Footer() {
               <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm">
                 If you have any queries, feel free to reach out via my email {" "}
                 <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=roykhushi432@gmail.com">
-                <span className='text-blue-600 cursor-pointer font-semibold'>roykhushi432@gmail.com</span>
+                <span className='text-sky-300 cursor-pointer font-semibold'>roykhushi432@gmail.com</span>
                 </Link>
                 
               </p>
