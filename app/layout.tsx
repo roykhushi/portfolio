@@ -1,24 +1,39 @@
-import type { Metadata } from "next";
-import { Poppins, Montserrat } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter_Tight, Instrument_Serif, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
-import {Toaster} from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
-const poppins = Poppins({
+const sans = Inter_Tight({
   subsets: ["latin"],
-  variable: "--font-inter",
-  weight: "300",
+  variable: "--font-inter-tight",
+  display: "swap",
 });
 
-const montserrat = Montserrat({
+const serif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+
+const mono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Khushi Roy",
-  description: "Portfolio Website",
+  title: "Khushi Roy — Software developer",
+  description:
+    "Khushi Roy is a developer based in New Delhi, India, building high-performance, responsive and aesthetic web applications.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#040f0f",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -28,13 +43,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${poppins.variable} ${montserrat.variable} antialiased`}
-      >
+      <body className={`${sans.variable} ${serif.variable} ${mono.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}
