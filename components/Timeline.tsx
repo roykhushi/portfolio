@@ -15,8 +15,31 @@ export type TimelineEntry = {
   subtitle?: string;
   meta?: string;
   points?: string[];
+  /** Several roles at one company, shown together under a single entry */
+  roles?: TimelineRole[];
   tags?: string[];
 };
+
+export type TimelineRole = {
+  title: string;
+  /** e.g. "Full-time" */
+  detail?: string;
+  range?: string;
+  points: string[];
+};
+
+function Bullets({ points }: { points: string[] }) {
+  return (
+    <ul className="mt-3 space-y-2 text-sm leading-relaxed text-foreground/80 md:text-base">
+      {points.map((p) => (
+        <li key={p} className="flex gap-3">
+          <span aria-hidden className="mt-2.5 size-1 shrink-0 rounded-full bg-muted-foreground" />
+          <span>{p}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function TimelineItem({ entry, index }: { entry: TimelineEntry; index: number }) {
   const reduce = useReducedMotion();
@@ -67,16 +90,16 @@ function TimelineItem({ entry, index }: { entry: TimelineEntry; index: number })
         {entry.meta && (
           <p className="mt-1 text-sm text-muted-foreground">{entry.meta}</p>
         )}
-        {entry.points && (
-          <ul className="mt-4 space-y-2 text-sm leading-relaxed text-foreground/80 md:text-base">
-            {entry.points.map((p) => (
-              <li key={p} className="flex gap-3">
-                <span aria-hidden className="mt-2.5 size-1 shrink-0 rounded-full bg-muted-foreground" />
-                <span>{p}</span>
-              </li>
-            ))}
-          </ul>
-        )}
+        {entry.points && <Bullets points={entry.points} />}
+        {entry.roles?.map((role) => (
+          <div key={role.title} className="mt-6 first:mt-4">
+            <h4 className="text-base font-medium">{role.title}</h4>
+            <p className="mt-0.5 text-sm text-muted-foreground">
+              {[role.detail, role.range].filter(Boolean).join(" · ")}
+            </p>
+            <Bullets points={role.points} />
+          </div>
+        ))}
         {entry.tags && (
           <ul className="mt-4 flex flex-wrap gap-2">
             {entry.tags.map((t) => (
