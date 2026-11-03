@@ -61,7 +61,7 @@ export function Hero() {
             <ClockInline className="mb-5 lg:hidden" />
             <p className="text-[11px] uppercase tracking-[0.04em] text-foreground/60">After hours</p>
             <p className="mt-1.5 text-sm leading-snug text-foreground/85">
-              9–5 during day. Tinkering on side projects 
+              9–5 during day. Working on side projects 
               and binging anime by the night.
             </p>
           </div>
